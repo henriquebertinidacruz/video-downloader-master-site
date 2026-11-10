@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obrigado | Video Downloader Master</title>
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">Video Downloader Master</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap narrow">
+    <h1>Obrigado pela assinatura</h1>
+    <p class="updated">Assim que o Mercado Pago confirmar o pagamento, a extensão libera os downloads ilimitados. No cartão e no Pix isso leva poucos segundos.</p>
+
+    <div class="card">
+      <p style="margin-top:0"><b>1. Abra a extensão de novo.</b> Ela confere a assinatura sozinha.</p>
+      <div id="codeWrap" hidden>
+        <p><b>2. Guarde este código.</b> Com ele você usa a assinatura em outro navegador (até 3): na extensão, clique em "Já assinei" e cole.</p>
+        <div class="code-box" id="code"></div>
+        <button class="btn btn-ghost" id="copy" type="button">Copiar código</button>
+      </div>
+      <p class="hint" style="margin-bottom:0">Se depois de alguns minutos a extensão ainda mostrar o limite grátis, fale com o suporte e informe o e-mail usado no pagamento.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Video Downloader Master</span>
+    <nav><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos de uso</a><a class="js-support" href="#" hidden>Suporte</a></nav>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="site.js"></script>
+<script>
+  const code = new URLSearchParams(location.search).get('code') || '';
+  if (/^VDM(-[A-HJ-NP-Z2-9]{4}){3}$/.test(code)) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('codeWrap').hidden = false;
+    document.getElementById('copy').addEventListener('click', async (e) => {
+      try { await navigator.clipboard.writeText(code); e.target.textContent = 'Copiado'; } catch {}
+    });
+  }
+</script>
+</body>
+</html>

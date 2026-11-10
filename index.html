@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Downloader Master</title>
+  <meta name="description" content="Extensão para Chrome que salva o vídeo que está tocando na página, já com o título certo no nome do arquivo.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">Video Downloader Master</a>
+    <nav>
+      <a class="opt" href="#como-funciona">Como funciona</a>
+      <a href="#precos">Preços</a>
+      <a class="opt" href="#perguntas">Perguntas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Salve o vídeo da página com o nome certo.</h1>
+        <p class="lead">Dê play, abra a extensão e clique em Baixar. O arquivo já sai com o título do vídeo, não com "video (37).mp4".</p>
+        <div class="actions">
+          <a class="btn btn-primary js-store" href="#">Adicionar ao Chrome</a>
+          <a class="btn btn-ghost" href="#precos">Ver preços</a>
+        </div>
+        <p class="note">3 downloads grátis a cada 24 horas, sem cadastro.</p>
+      </div>
+      <div class="shot"><img src="img/popup.png" width="620" height="384" alt="Janela da extensão com três vídeos detectados: um baixando em 62%, um salvo e um pronto para baixar"></div>
+    </div>
+  </div>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <p class="sub">Sem copiar link, sem site de conversão.</p>
+      <ol class="steps">
+        <li><h3>Dê play no vídeo</h3><p>A extensão percebe os vídeos que a página carrega, inclusive os que tocam dentro de outro player.</p></li>
+        <li><h3>Abra a extensão</h3><p>Aparece a lista com o título de cada vídeo, a duração e a qualidade.</p></li>
+        <li><h3>Clique em Baixar</h3><p>O arquivo vai para a sua pasta de downloads com o nome do vídeo.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>O que ela faz</h2>
+      <p class="sub">Feita para quem guarda vídeo para assistir depois, estudar ou editar.</p>
+      <div class="feats">
+        <div><h3>Título no nome do arquivo</h3><p>Usa o título que aparece acima do player ou o nome do post, sem caracteres que o Windows recusa.</p></div>
+        <div><h3>Vídeos em partes</h3><p>Junta os pedaços dos players de streaming (HLS) num arquivo só, com áudio e vídeo juntos.</p></div>
+        <div><h3>Melhor qualidade disponível</h3><p>Quando o site oferece várias, baixa a maior.</p></div>
+        <div><h3>Rápida</h3><p>Baixa vários pedaços ao mesmo tempo e tenta de novo quando a conexão oscila.</p></div>
+        <div><h3>Funciona em vários sites</h3><p>Páginas comuns, players embutidos, cursos e redes sociais.</p></div>
+        <div><h3>Nada sai do seu computador</h3><p>O download acontece no seu navegador. Não guardamos seus vídeos nem o que você assiste.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precos">
+    <div class="wrap">
+      <h2>Preços</h2>
+      <p class="sub">Comece grátis. Assine quando precisar de mais.</p>
+      <div class="plans">
+        <div class="plan">
+          <h3>Grátis</h3>
+          <div class="price">R$ 0</div>
+          <ul>
+            <li>3 downloads a cada 24 horas</li>
+            <li>Todos os recursos</li>
+            <li>Sem cadastro</li>
+          </ul>
+          <a class="btn btn-ghost js-store" href="#">Adicionar ao Chrome</a>
+        </div>
+        <div class="plan main">
+          <h3>Assinatura</h3>
+          <div class="price">R$ 14,90 <small>/mês</small></div>
+          <ul>
+            <li>Downloads ilimitados</li>
+            <li>Cartão (renova sozinho) ou Pix (30 dias por vez)</li>
+            <li>Use em até 3 navegadores</li>
+            <li>Cancele quando quiser</li>
+          </ul>
+          <a class="btn btn-primary" href="#assinar-pela-extensao" id="subLink">Assinar</a>
+        </div>
+      </div>
+      <p class="hint" id="assinar-pela-extensao" style="margin-top:16px">A assinatura é feita pela extensão: instale, abra e clique em "Assinar por R$ 14,90/mês". Assim ela fica ligada ao seu navegador.</p>
+    </div>
+  </section>
+
+  <section id="perguntas">
+    <div class="wrap"><div style="max-width:680px">
+      <h2>Perguntas</h2>
+      <p class="sub">Se a sua não estiver aqui, escreva para o suporte.</p>
+      <details><summary>Funciona em qualquer site?</summary><p>Na maioria dos sites que tocam vídeo pelo navegador. Não funciona no YouTube, por regra da Chrome Web Store, nem em serviços com proteção contra cópia (DRM), como plataformas de filmes e séries por assinatura. Nesses casos o vídeo aparece como "Protegido" e o download não é descontado.</p></details>
+      <details><summary>O vídeo não apareceu na lista. E agora?</summary><p>Dê play por alguns segundos e abra a extensão de novo. Se ainda assim não aparecer, clique em "Procurar". Alguns sites só carregam o vídeo depois do play.</p></details>
+      <details><summary>Posso baixar qualquer vídeo?</summary><p>Baixe apenas o que você tem direito de guardar: conteúdo seu, com licença livre ou que o autor permite salvar. Você é responsável pelo uso que faz dos arquivos.</p></details>
+      <details><summary>Como funciona o Pix?</summary><p>Cada pagamento libera 30 dias. Perto do vencimento a extensão mostra o botão "Renovar". No cartão a renovação é automática todo mês.</p></details>
+      <details><summary>Como cancelo?</summary><p>No cartão, cancele a assinatura na sua conta do Mercado Pago (Assinaturas). Você continua com acesso até o fim do mês já pago. No Pix não há o que cancelar: basta não renovar.</p></details>
+      <details><summary>Troquei de computador. Perco a assinatura?</summary><p>Não. Depois do pagamento você recebe um código (VDM-XXXX-XXXX-XXXX). Na extensão do outro navegador, clique em "Já assinei" e cole o código. Vale para até 3 navegadores.</p></details>
+      <details><summary>Vocês veem o que eu baixo?</summary><p>Não. A extensão não envia para nós os endereços dos vídeos nem o seu histórico. O único contato com o nosso servidor é para conferir a assinatura. Veja a <a href="privacidade.html">política de privacidade</a>.</p></details>
+    </div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Video Downloader Master</span>
+    <nav>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="termos.html">Termos de uso</a>
+      <a class="js-support" href="#" hidden>Suporte</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

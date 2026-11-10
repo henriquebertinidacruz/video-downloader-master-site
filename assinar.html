@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assinar | Video Downloader Master</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">Video Downloader Master</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap narrow">
+    <h1>Assinatura</h1>
+    <p class="updated">R$ 14,90 por mês, downloads ilimitados. Pagamento pelo Mercado Pago.</p>
+
+    <div class="card" id="noInstall" hidden>
+      <p style="margin-top:0"><b>Abra esta página pela extensão.</b></p>
+      <p class="hint" style="margin:0">A assinatura fica ligada ao seu navegador. Instale a extensão, abra e clique em "Assinar por R$ 14,90/mês".</p>
+    </div>
+
+    <form class="card" id="form" hidden>
+      <label for="email">Seu e-mail</label>
+      <input type="email" id="email" required autocomplete="email" placeholder="voce@exemplo.com">
+      <p class="hint">Usado pelo Mercado Pago no pagamento e para recuperar sua assinatura.</p>
+
+      <fieldset class="methods">
+        <legend>Forma de pagamento</legend>
+        <label class="method">
+          <input type="radio" name="method" value="card" checked>
+          <div><b>Cartão de crédito</b><span>Renova sozinho todo mês. Cancele quando quiser no Mercado Pago.</span></div>
+        </label>
+        <label class="method">
+          <input type="radio" name="method" value="pix">
+          <div><b>Pix</b><span>Libera 30 dias. Perto do vencimento a extensão avisa para renovar.</span></div>
+        </label>
+      </fieldset>
+
+      <button class="btn btn-primary" type="submit" id="go" style="width:100%">Continuar para o pagamento</button>
+      <p class="msg" id="msg" role="status"></p>
+      <p class="hint">Ao continuar você aceita os <a href="termos.html">termos de uso</a> e a <a href="privacidade.html">política de privacidade</a>.</p>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Video Downloader Master</span>
+    <nav><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos de uso</a><a class="js-support" href="#" hidden>Suporte</a></nav>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="site.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const install = params.get('install') || '';
+  const valid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(install);
+  const form = document.getElementById('form');
+  const msg = document.getElementById('msg');
+  document.getElementById(valid ? 'form' : 'noInstall').hidden = false;
+  if (params.get('erro')) { msg.className = 'msg err'; msg.textContent = 'O pagamento não foi concluído. Você pode tentar de novo.'; }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const go = document.getElementById('go');
+    go.disabled = true;
+    msg.className = 'msg';
+    msg.textContent = 'Abrindo o Mercado Pago…';
+    try {
+      const res = await fetch(`${window.VDM_API}/checkout`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          install,
+          email: document.getElementById('email').value.trim(),
+          method: form.querySelector('input[name="method"]:checked').value,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.url) throw new Error(data.error || 'checkout');
+      location.href = data.url;
+    } catch (err) {
+      go.disabled = false;
+      msg.className = 'msg err';
+      msg.textContent = err.message === 'invalid_email'
+        ? 'Confira o e-mail digitado.'
+        : 'Não foi possível abrir o pagamento agora. Tente de novo em alguns minutos.';
+    }
+  });
+</script>
+</body>
+</html>

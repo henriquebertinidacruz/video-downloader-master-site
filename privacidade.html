@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacidade | Video Downloader Master</title>
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">Video Downloader Master</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap narrow">
+    <h1>Política de privacidade</h1>
+    <p class="updated">Atualizada em 10 de novembro de 2026</p>
+
+    <p>Esta política explica quais dados a extensão Video Downloader Master e este site tratam, e por quê. Ela segue a Lei Geral de Proteção de Dados (Lei 13.709/2018).</p>
+
+    <h2>O que fica só no seu navegador</h2>
+    <ul>
+      <li>Os endereços dos vídeos detectados nas páginas e os títulos usados como nome de arquivo.</li>
+      <li>A contagem dos downloads grátis das últimas 24 horas.</li>
+      <li>Um identificador aleatório da instalação, gerado pela extensão e sem relação com você.</li>
+    </ul>
+    <p>Esses dados não são enviados para nós. Os downloads são feitos diretamente entre o seu navegador e o site do vídeo.</p>
+
+    <h2>O que chega ao nosso servidor</h2>
+    <ul>
+      <li><b>Identificador da instalação:</b> para conferir se aquele navegador tem assinatura ativa.</li>
+      <li><b>E-mail e forma de pagamento</b>, quando você assina: para criar o pagamento no Mercado Pago e recuperar a assinatura se você trocar de navegador.</li>
+      <li><b>Situação da assinatura</b>: validade, código de ativação, navegadores ligados a ele e números dos pagamentos confirmados.</li>
+    </ul>
+    <p>Não coletamos histórico de navegação, endereços de vídeos, títulos, nome, CPF ou dados de cartão.</p>
+
+    <h2>Pagamento</h2>
+    <p>O pagamento é processado pelo Mercado Pago, que trata seus dados de pagamento conforme a política de privacidade dele. Nós recebemos apenas a confirmação do pagamento, o valor e o e-mail informado.</p>
+
+    <h2>Base legal e prazo</h2>
+    <p>Tratamos esses dados para executar o contrato de assinatura (art. 7º, V da LGPD) e cumprir obrigações legais e fiscais. Eles ficam guardados enquanto a assinatura existir e pelo prazo exigido pela legislação fiscal depois disso.</p>
+
+    <h2>Compartilhamento</h2>
+    <p>Não vendemos nem compartilhamos dados, exceto com os serviços necessários para funcionar: Mercado Pago (pagamento) e Cloudflare (hospedagem do servidor de assinaturas).</p>
+
+    <h2>Seus direitos</h2>
+    <p>Você pode pedir acesso, correção ou exclusão dos seus dados pelo contato de suporte. A exclusão encerra a assinatura ligada a eles.</p>
+
+    <h2>Permissões da extensão</h2>
+    <ul>
+      <li><b>Acesso aos sites:</b> para perceber os vídeos que a página carrega e ler o título do vídeo.</li>
+      <li><b>Downloads:</b> para salvar o arquivo na sua pasta de downloads.</li>
+      <li><b>Armazenamento:</b> para guardar a contagem grátis e a assinatura no seu navegador.</li>
+    </ul>
+
+    <h2>Contato</h2>
+    <p id="contact">Use o contato de suporte informado na página da extensão na Chrome Web Store.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Video Downloader Master</span>
+    <nav><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos de uso</a><a class="js-support" href="#" hidden>Suporte</a></nav>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="site.js"></script>
+<script>
+  if (window.VDM_SUPPORT) document.getElementById('contact').textContent = 'E-mail: ' + window.VDM_SUPPORT;
+</script>
+</body>
+</html>
